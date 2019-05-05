@@ -151,6 +151,7 @@
     <EmbeddedResource Include="View\SpiderFormulaControl.resx">
       <DependentUpon>SpiderFormulaControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="NannSpider-暔蜘-v1.0安装包.zip" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -52,7 +52,7 @@
 			this.buttonExportResult.Location = new System.Drawing.Point(93, 12);
 			this.buttonExportResult.Name = "buttonExportResult";
 			this.buttonExportResult.Size = new System.Drawing.Size(75, 41);
-			this.buttonExportResult.TabIndex = 3;
+			this.buttonExportResult.TabIndex = 1;
 			this.buttonExportResult.Text = "导出结果";
 			this.buttonExportResult.UseVisualStyleBackColor = false;
 			this.buttonExportResult.Click += new System.EventHandler(this.buttonExportResult_Click);
@@ -64,7 +64,7 @@
 			this.buttonRefresh.Location = new System.Drawing.Point(12, 12);
 			this.buttonRefresh.Name = "buttonRefresh";
 			this.buttonRefresh.Size = new System.Drawing.Size(75, 41);
-			this.buttonRefresh.TabIndex = 3;
+			this.buttonRefresh.TabIndex = 0;
 			this.buttonRefresh.Text = "刷新";
 			this.buttonRefresh.UseVisualStyleBackColor = false;
 			this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);

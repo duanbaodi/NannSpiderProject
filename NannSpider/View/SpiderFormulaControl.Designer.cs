@@ -53,7 +53,7 @@
 			this.textBoxKeyword.Location = new System.Drawing.Point(156, 55);
 			this.textBoxKeyword.Name = "textBoxKeyword";
 			this.textBoxKeyword.Size = new System.Drawing.Size(442, 26);
-			this.textBoxKeyword.TabIndex = 0;
+			this.textBoxKeyword.TabIndex = 1;
 			// 
 			// textBoxKeywordregex
 			// 
@@ -63,7 +63,7 @@
 			this.textBoxKeywordregex.Location = new System.Drawing.Point(156, 87);
 			this.textBoxKeywordregex.Name = "textBoxKeywordregex";
 			this.textBoxKeywordregex.Size = new System.Drawing.Size(442, 26);
-			this.textBoxKeywordregex.TabIndex = 0;
+			this.textBoxKeywordregex.TabIndex = 2;
 			// 
 			// textBoxName
 			// 
@@ -73,7 +73,7 @@
 			this.textBoxName.Location = new System.Drawing.Point(156, 119);
 			this.textBoxName.Name = "textBoxName";
 			this.textBoxName.Size = new System.Drawing.Size(442, 26);
-			this.textBoxName.TabIndex = 0;
+			this.textBoxName.TabIndex = 3;
 			// 
 			// label2
 			// 
@@ -113,7 +113,7 @@
 			this.textBoxPageRegex.Location = new System.Drawing.Point(156, 186);
 			this.textBoxPageRegex.Name = "textBoxPageRegex";
 			this.textBoxPageRegex.Size = new System.Drawing.Size(442, 26);
-			this.textBoxPageRegex.TabIndex = 0;
+			this.textBoxPageRegex.TabIndex = 6;
 			// 
 			// label7
 			// 
@@ -132,7 +132,7 @@
 			this.checkBoxContinuePage.Location = new System.Drawing.Point(41, 155);
 			this.checkBoxContinuePage.Name = "checkBoxContinuePage";
 			this.checkBoxContinuePage.Size = new System.Drawing.Size(124, 24);
-			this.checkBoxContinuePage.TabIndex = 2;
+			this.checkBoxContinuePage.TabIndex = 4;
 			this.checkBoxContinuePage.Text = "是否连续查询";
 			this.checkBoxContinuePage.UseVisualStyleBackColor = true;
 			this.checkBoxContinuePage.CheckedChanged += new System.EventHandler(this.checkBoxContinuePage_CheckedChanged);
@@ -174,7 +174,7 @@
 			this.comboBoxSearchEngine.Location = new System.Drawing.Point(156, 21);
 			this.comboBoxSearchEngine.Name = "comboBoxSearchEngine";
 			this.comboBoxSearchEngine.Size = new System.Drawing.Size(442, 28);
-			this.comboBoxSearchEngine.TabIndex = 4;
+			this.comboBoxSearchEngine.TabIndex = 0;
 			// 
 			// label8
 			// 

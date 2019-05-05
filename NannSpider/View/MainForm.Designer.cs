@@ -64,7 +64,7 @@
 			this.buttonRunOne.Location = new System.Drawing.Point(298, 12);
 			this.buttonRunOne.Name = "buttonRunOne";
 			this.buttonRunOne.Size = new System.Drawing.Size(75, 41);
-			this.buttonRunOne.TabIndex = 0;
+			this.buttonRunOne.TabIndex = 3;
 			this.buttonRunOne.Text = "运行";
 			this.buttonRunOne.UseVisualStyleBackColor = false;
 			this.buttonRunOne.Click += new System.EventHandler(this.buttonRunOne_Click);
@@ -76,7 +76,7 @@
 			this.buttonRunAll.Location = new System.Drawing.Point(379, 12);
 			this.buttonRunAll.Name = "buttonRunAll";
 			this.buttonRunAll.Size = new System.Drawing.Size(75, 41);
-			this.buttonRunAll.TabIndex = 0;
+			this.buttonRunAll.TabIndex = 4;
 			this.buttonRunAll.Text = "运行全部";
 			this.buttonRunAll.UseVisualStyleBackColor = false;
 			this.buttonRunAll.Click += new System.EventHandler(this.buttonRunAll_Click);
@@ -89,7 +89,7 @@
 			this.buttonSetting.Location = new System.Drawing.Point(772, 12);
 			this.buttonSetting.Name = "buttonSetting";
 			this.buttonSetting.Size = new System.Drawing.Size(49, 41);
-			this.buttonSetting.TabIndex = 0;
+			this.buttonSetting.TabIndex = 5;
 			this.buttonSetting.Text = "关于";
 			this.buttonSetting.UseVisualStyleBackColor = false;
 			this.buttonSetting.Click += new System.EventHandler(this.buttonSetting_Click);
@@ -115,7 +115,7 @@
 			this.listViewFormula.Name = "listViewFormula";
 			this.listViewFormula.ShowGroups = false;
 			this.listViewFormula.Size = new System.Drawing.Size(832, 508);
-			this.listViewFormula.TabIndex = 1;
+			this.listViewFormula.TabIndex = 6;
 			this.listViewFormula.UseCompatibleStateImageBehavior = false;
 			this.listViewFormula.View = System.Windows.Forms.View.Details;
 			this.listViewFormula.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.priceListView_ColumnClick);
@@ -162,7 +162,7 @@
 			this.buttonDeleteFormula.Location = new System.Drawing.Point(174, 12);
 			this.buttonDeleteFormula.Name = "buttonDeleteFormula";
 			this.buttonDeleteFormula.Size = new System.Drawing.Size(75, 41);
-			this.buttonDeleteFormula.TabIndex = 7;
+			this.buttonDeleteFormula.TabIndex = 2;
 			this.buttonDeleteFormula.Text = "删除规则";
 			this.buttonDeleteFormula.UseVisualStyleBackColor = false;
 			this.buttonDeleteFormula.Click += new System.EventHandler(this.buttonDeleteFormula_Click);
@@ -173,7 +173,7 @@
 			this.buttonEditFormula.Location = new System.Drawing.Point(93, 12);
 			this.buttonEditFormula.Name = "buttonEditFormula";
 			this.buttonEditFormula.Size = new System.Drawing.Size(75, 41);
-			this.buttonEditFormula.TabIndex = 6;
+			this.buttonEditFormula.TabIndex = 1;
 			this.buttonEditFormula.Text = "编辑规则";
 			this.buttonEditFormula.UseVisualStyleBackColor = false;
 			this.buttonEditFormula.Click += new System.EventHandler(this.buttonEditFormula_Click);
