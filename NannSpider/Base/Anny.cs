@@ -176,7 +176,7 @@ namespace Xivid.UtilModule
 			try
 			{
 				// 写入文件的源路径及其写入流
-				using ( Stream _fileStream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write ))
+				using ( Stream _fileStream = new FileStream(path, FileMode.Create, FileAccess.Write ))
 				using(StreamWriter swWriteFile = new StreamWriter(_fileStream, Encoding.Unicode))
 				{
 					swWriteFile.Write(content); //写入读取的每行数据

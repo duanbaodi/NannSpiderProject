@@ -19,7 +19,7 @@ namespace NannSpider
 			Instance = this;
 			string content = Anny.LoadFile(Path);
 			spiderFormulas = Anny.FromXml<List<SpiderFormula>>(content);
-			if(spiderFormulas == null || spiderFormulas.Count == 0)
+			if(spiderFormulas == null )
 			{
 				spiderFormulas = new List<SpiderFormula>();
 				spiderFormulas.Add(new SpiderFormula()
@@ -88,6 +88,7 @@ namespace NannSpider
 
 					interestcontentregex = "(光辉玻璃|光晖玻璃|光辉钢化|光晖钢化|迪辉玻璃|迪辉钢化)",
 				});
+				new About().Show();
 			}
 			UpdateListview();
 		}
