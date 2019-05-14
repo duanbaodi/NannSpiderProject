@@ -6,13 +6,12 @@ using System.Windows.Forms;
 
 namespace NannSpider
 {
-	public class BaiduSpider : INannSpider
+	public class SogouSpider : INannSpider
 	{
-		public static string SearchEngineName = "百度搜索";
+		public static string SearchEngineName = "搜狗搜索";
 		private WebQuery query = new WebQuery();
 		public List<DecodeResult> ranklist = new List<DecodeResult>();
-		public List<DecodeResult> Ranklist() =>  ranklist;
-
+		public List<DecodeResult> Ranklist() => ranklist;
 		private bool hasUri = false;
 		public async Task Run(SpiderFormula formula, FlowLayoutPanel panel)
 		{
@@ -28,10 +27,10 @@ namespace NannSpider
 			{
 				if(!hasUri)
 				{  
-					query.SetUri("http://www.baidu.com");
+					query.SetUri("https://www.sogou.com");
 					hasUri = true;
 				}
-				string result = await query.HttpClientDoGet("/s?wd=" + formula.keyword + "&pn=" + (10 * i));
+				string result = await query.HttpClientDoGet("/web?query=" + formula.keyword + "&page=" + (i+1));
 				List<DecodeResult> list = DecodeResult(result, formula);
 				if(list == null || list.Count == 0)
 					continue;
@@ -52,13 +51,15 @@ namespace NannSpider
 		}
 
 
-		private Regex regex = new Regex(" id=\"(\\d+)\".+?title\":\"(.+?)\".+?url\":\"(.+?)\"", RegexOptions.Compiled, Regex.InfiniteMatchTimeout);
-
-
+		private Regex regex = new Regex("id=\"(rb_|vr_)(\\d+)\".+?href=\"(.+?)\".+?>(.+?)</", RegexOptions.Compiled, Regex.InfiniteMatchTimeout);
 		private List<DecodeResult> DecodeResult(string result, SpiderFormula formula)
 		{
 			List<DecodeResult> list = new List<DecodeResult>();
-			string text = result.Substring(result.IndexOf("<div id=\"content_left\">")).Replace("\r", " ").Replace("\\n", " ").Replace("\n", " ");
+			string text = result.Substring(result.IndexOf("<div class=\"results\">"))
+				.Replace("\r", " ").Replace("\\n", " ").Replace("\n", " ")
+				.Replace("<em>", "").Replace("</em>", "")
+				.Replace("<!--awbg5-->", "").Replace("<!--red_beg-->", "")
+				.Replace("<!--red_end-->", "");
 			var matches = regex.Matches(text);
 			if(matches == null)
 				return null;
@@ -67,13 +68,11 @@ namespace NannSpider
 				var d = new DecodeResult();
 				d.searchengine = SearchEngineName;
 				d.ipaddress = match.Groups[3].Value.ToString();
-				d.no = match.Groups[1].Value.ToString();
-				d.title = match.Groups[2].Value.ToString();
+				d.no = match.Groups[2].Value.ToString();
+				d.title = match.Groups[4].Value.ToString();
 				list.Add(d);
 			}
 			return list;
 		}
-
 	}
-	
 }

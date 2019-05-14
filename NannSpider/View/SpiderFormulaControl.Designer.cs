@@ -165,9 +165,9 @@
 			this.comboBoxSearchEngine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.comboBoxSearchEngine.FormattingEnabled = true;
 			this.comboBoxSearchEngine.Items.AddRange(new object[] {
-            "百度",
-            "搜狗(暂不支持)",
-            "360搜索(暂不支持)",
+            "百度搜索",
+            "360搜索",
+            "搜狗搜索",
             "必应搜索(暂不支持)",
             "谷歌搜索(暂不支持,需要您自备VPN)",
             "soso搜索(暂不支持)"});

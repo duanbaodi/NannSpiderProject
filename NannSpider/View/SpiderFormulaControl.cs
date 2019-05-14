@@ -19,6 +19,8 @@ namespace NannSpider
 				checkBoxContinuePage.Checked = i.continuepage;
 				numericUpDownPageCount.Value = i.continuepagecount;
 				textBoxPageRegex.Text = i.continuepageregex;
+				numericUpDownPageCount.Enabled = checkBoxContinuePage.Checked;
+				textBoxPageRegex.Enabled = checkBoxContinuePage.Checked;
 			}
 		}
 

@@ -43,7 +43,7 @@
 			this.searchResultPanel.Location = new System.Drawing.Point(0, 59);
 			this.searchResultPanel.Name = "searchResultPanel";
 			this.searchResultPanel.Size = new System.Drawing.Size(745, 389);
-			this.searchResultPanel.TabIndex = 2;
+			this.searchResultPanel.TabIndex = 0;
 			// 
 			// buttonExportResult
 			// 

@@ -6,13 +6,12 @@ using System.Windows.Forms;
 
 namespace NannSpider
 {
-	public class BaiduSpider : INannSpider
+	public class ThreeSixZeroSpider : INannSpider
 	{
-		public static string SearchEngineName = "百度搜索";
+		public static string SearchEngineName = "360搜索";
 		private WebQuery query = new WebQuery();
 		public List<DecodeResult> ranklist = new List<DecodeResult>();
-		public List<DecodeResult> Ranklist() =>  ranklist;
-
+		public List<DecodeResult> Ranklist() => ranklist;
 		private bool hasUri = false;
 		public async Task Run(SpiderFormula formula, FlowLayoutPanel panel)
 		{
@@ -28,10 +27,10 @@ namespace NannSpider
 			{
 				if(!hasUri)
 				{  
-					query.SetUri("http://www.baidu.com");
+					query.SetUri("http://www.so.com");
 					hasUri = true;
 				}
-				string result = await query.HttpClientDoGet("/s?wd=" + formula.keyword + "&pn=" + (10 * i));
+				string result = await query.HttpClientDoGet("/s?q=" + formula.keyword + "&pn=" + (1+i));
 				List<DecodeResult> list = DecodeResult(result, formula);
 				if(list == null || list.Count == 0)
 					continue;
@@ -52,13 +51,13 @@ namespace NannSpider
 		}
 
 
-		private Regex regex = new Regex(" id=\"(\\d+)\".+?title\":\"(.+?)\".+?url\":\"(.+?)\"", RegexOptions.Compiled, Regex.InfiniteMatchTimeout);
-
-
+		private Regex regex = new Regex("\"res-title.+?href=\"(.+?)\".+?\"pos\":(\\d+).+?>(.+?)</a></h3>", RegexOptions.Compiled, Regex.InfiniteMatchTimeout);
 		private List<DecodeResult> DecodeResult(string result, SpiderFormula formula)
 		{
 			List<DecodeResult> list = new List<DecodeResult>();
-			string text = result.Substring(result.IndexOf("<div id=\"content_left\">")).Replace("\r", " ").Replace("\\n", " ").Replace("\n", " ");
+			string text = result.Substring(result.IndexOf("<ul class=\"result\">"))
+				.Replace("\r", " ").Replace("\\n", " ").Replace("\n", " ")
+				.Replace("<em>","").Replace("</em>","");
 			var matches = regex.Matches(text);
 			if(matches == null)
 				return null;
@@ -66,14 +65,12 @@ namespace NannSpider
 			{
 				var d = new DecodeResult();
 				d.searchengine = SearchEngineName;
-				d.ipaddress = match.Groups[3].Value.ToString();
-				d.no = match.Groups[1].Value.ToString();
-				d.title = match.Groups[2].Value.ToString();
+				d.ipaddress = match.Groups[1].Value.ToString();
+				d.no = match.Groups[2].Value.ToString();
+				d.title = match.Groups[3].Value.ToString();
 				list.Add(d);
 			}
 			return list;
 		}
-
 	}
-	
 }

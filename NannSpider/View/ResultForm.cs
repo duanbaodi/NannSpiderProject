@@ -9,7 +9,7 @@ namespace NannSpider.View
 	public partial class ResultForm : Form
 	{
 		private List<SpiderFormula> spiderFormulas;
-		private List<BaiduSpider> spiders = new List<BaiduSpider>();
+		private List<INannSpider> spiders = new List<INannSpider>();
 
 		public ResultForm(List<SpiderFormula> spiderFormulas)
 		{
@@ -27,11 +27,24 @@ namespace NannSpider.View
 				searchResultPanel.Controls.Clear();
 				foreach(var i in spiderFormulas)
 				{
-					if(i.searchengine == "百度")
+					if(i.searchengine == "百度" 
+						|| i.searchengine=="百度搜索")
 					{
 						var baidu = new BaiduSpider();
 						baidu.Run(i, searchResultPanel);
 						spiders.Add(baidu);
+					}
+					else if(i.searchengine == "360搜索")
+					{
+						var so = new ThreeSixZeroSpider();
+						so.Run(i, searchResultPanel);
+						spiders.Add(so);
+					}
+					else if(i.searchengine == "搜狗搜索")
+					{
+						var so = new SogouSpider();
+						so.Run(i, searchResultPanel);
+						spiders.Add(so);
 					}
 				}
 			}
@@ -50,7 +63,7 @@ namespace NannSpider.View
 							.Append("网址").Append("\r\n");
 				foreach(var i in spiders)
 				{
-					foreach(var j in i.ranklist)
+					foreach(var j in i.Ranklist())
 					{
 						sb.Append(j.searchengine).Append("\t")
 							.Append(j.keyword).Append("\t")

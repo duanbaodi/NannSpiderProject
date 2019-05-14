@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NannSpider.Model;
 
 namespace NannSpider
 {
@@ -16,7 +17,7 @@ namespace NannSpider
 		{
 			InitializeComponent();
 
-			this.mainText.Text = decodeResult.keyword+"\r\n【" + decodeResult.no + "】" 
+			this.mainText.Text = "【"+decodeResult.searchengine+"】" + decodeResult.keyword+"\r\n【" + decodeResult.no + "】" 
 				+ decodeResult.title 
 				+ "\r\n" + decodeResult.ipaddress;
 		}

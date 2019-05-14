@@ -27,7 +27,7 @@
     <TargetCulture>zh-Hans</TargetCulture>
     <ProductName>暔蜘</ProductName>
     <PublisherName>duanbaodi</PublisherName>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -81,6 +81,9 @@
   <ItemGroup>
     <Compile Include="Base\Anny.cs" />
     <Compile Include="Base\ListViewItemComparer.cs" />
+    <Compile Include="Model\DecodeResult.cs" />
+    <Compile Include="Model\SogouSpider.cs" />
+    <Compile Include="Model\ThreeSixZeroSpider.cs" />
     <Compile Include="Model\BaiduSpider.cs" />
     <Compile Include="Base\INannSpider.cs" />
     <Compile Include="View\About.cs">
