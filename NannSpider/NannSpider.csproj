@@ -27,7 +27,7 @@
     <TargetCulture>zh-Hans</TargetCulture>
     <ProductName>暔蜘</ProductName>
     <PublisherName>duanbaodi</PublisherName>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -155,6 +155,7 @@
       <DependentUpon>SpiderFormulaControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="NannSpider-暔蜘-v1.0安装包.zip" />
+    <None Include="NannSpider-暔蜘-v1.1安装包.zip" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
